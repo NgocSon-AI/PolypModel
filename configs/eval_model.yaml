@@ -1,0 +1,33 @@
+model:
+  decode_channels: 64
+  pretrained: true
+  num_classes: 1
+  window_size: 8
+data:
+  workers_per_gpu: 4
+  test:
+    img1_root: '/content/drive/MyDrive/PolypModel/data/TestDataset/CVC-300/images/'
+    gt1_root: '/content/drive/MyDrive/PolypModel/data/TestDataset/CVC-300/masks/'
+
+    img2_root: '/content/drive/MyDrive/PolypModel/data/TestDataset/CVC-ClinicDB/images/'
+    gt2_root: '/content/drive/MyDrive/PolypModel/data/TestDataset/CVC-ClinicDB/masks/'
+
+    img3_root: '/content/drive/MyDrive/PolypModel/data/TestDataset/CVC-ColonDB/images/'
+    gt3_root: '/content/drive/MyDrive/PolypModel/data/TestDataset/CVC-ColonDB/masks/'
+
+    img4_root: '/content/drive/MyDrive/PolypModel/data/TestDataset/ETIS-LaribPolypDB/images/'
+    gt4_root: '/content/drive/MyDrive/PolypModel/data/TestDataset/ETIS-LaribPolypDB/masks/'
+
+    img5_root: '/content/drive/MyDrive/PolypModel/data/TestDataset/Kvasir/images/'
+    gt5_root: '/content/drive/MyDrive/PolypModel/data/TestDataset/Kvasir/masks/'
+
+    img_size: 256
+    batch_size: 16
+
+work_dir: './workdirs/'
+threshold: 0.5
+
+#weight
+weight_path: '/content/drive/MyDrive/PolypModel/workdirs/runs-50-3600.pt'
+#device
+device: 0

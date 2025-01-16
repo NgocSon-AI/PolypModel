@@ -1,0 +1,31 @@
+model:
+  decode_channels: 64
+  pretrained: true
+  num_classes: 1
+  window_size: 8
+data:
+  workers_per_gpu: 4
+  train:
+    img_root: '/content/drive/MyDrive/PolypModel/data/TrainDataset/image/'
+    gt_root: '/content/drive/MyDrive/PolypModel/data/TrainDataset/masks/'
+    img_size: 256
+    batch_size: 16
+#optimizer
+optimizer:
+  type: 'AdamW'
+  lr: 0.0001
+optimizer_config:
+    grad_clip:
+        max_norm: 40
+        norm_type: 2
+
+#learning_rate_scheduler
+lr_scheduler:
+  type: 'cosine_lr'
+
+#learning policy
+num_epochs: 50
+work_dir: './workdirs/'
+threshold: 0.5
+#device
+device: 0

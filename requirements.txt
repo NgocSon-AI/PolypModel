@@ -1,0 +1,4 @@
+tensorboardX
+timm
+wandb
+einops
